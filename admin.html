@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrator Dashboard - AHiHi Store (BW08 - Q8)</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/admin.css">
+</head>
+<body>
+
+    <!-- Admin Header -->
+    <header class="admin-header">
+        <div class="admin-title">
+            <span>📊 Quản Trị Hệ Thống AHiHi Store</span>
+            <span class="admin-badge">Admin &amp; Sales Management</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:16px;">
+            <a href="index.html" style="color:#ffffff;text-decoration:none;font-size:13.5px;font-weight:600;background:rgba(255,255,255,0.15);padding:6px 14px;border-radius:6px;">
+                &larr; Xem Cửa Hàng
+            </a>
+            <div id="admin-user-info" style="font-size:13px;">
+                <span id="admin-staff-name" style="font-weight:700;">Chưa đăng nhập</span>
+            </div>
+            <button type="button" onclick="AuthManager.logout()" style="background:#e53e3e;color:#fff;border:none;padding:6px 12px;border-radius:6px;font-weight:700;cursor:pointer;font-size:12px;">
+                Đăng xuất
+            </button>
+        </div>
+    </header>
+
+    <div class="admin-container">
+        <!-- 1. Admin Login Card (Hiển thị khi chưa đăng nhập quyền Admin/Sales Manager) -->
+        <div id="admin-login-card" class="admin-card" style="max-width:500px;margin:40px auto;display:none;">
+            <div class="admin-card-header">
+                <h3>🔐 Đăng Nhập Trang Quản Trị (Q8)</h3>
+            </div>
+            <p style="font-size:13.5px;color:#718096;margin-bottom:18px;">
+                Chỉ nhân viên có quyền <strong>Admin</strong> hoặc <strong>Sales Manager</strong> mới được truy cập Dashboard quản trị.
+            </p>
+            <form onsubmit="AdminDashboard.handleAdminLogin(event)">
+                <div class="form-group">
+                    <label for="admin-login-email">Email nhân viên quản trị:</label>
+                    <input type="email" id="admin-login-email" class="form-control" placeholder="admin@bw08.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="admin-login-pwd">Mật khẩu:</label>
+                    <input type="password" id="admin-login-pwd" class="form-control" placeholder="••••••••" required>
+                </div>
+                <div id="admin-login-feedback" class="form-feedback" style="margin-bottom:12px;"></div>
+                <button type="submit" class="btn btn-primary" style="width:100%;padding:12px;">
+                    Xác Thực Đăng Nhập
+                </button>
+            </form>
+
+            <div style="margin-top:20px;padding-top:14px;border-top:1px solid #e2e8f0;">
+                <small style="color:#718096;font-weight:bold;display:block;margin-bottom:8px;">TÀI KHOẢN QUẢN TRỊ MẪU (Click để điền):</small>
+                <div style="display:flex;flex-direction:column;gap:6px;">
+                    <span style="cursor:pointer;background:#ebf8ff;color:#2b6cb0;padding:6px 10px;border-radius:6px;font-size:12.5px;font-weight:600;" onclick="AdminDashboard.quickLogin('admin@bw08.com', '123')">
+                        👔 Giám Đốc (Admin): admin@bw08.com / 123
+                    </span>
+                    <span style="cursor:pointer;background:#f0fff4;color:#276749;padding:6px 10px;border-radius:6px;font-size:12.5px;font-weight:600;" onclick="AdminDashboard.quickLogin('manager@bw08.com', '123')">
+                        📈 Sales Manager: manager@bw08.com / 123
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. Main Admin Dashboard View -->
+        <div id="admin-dashboard-view" style="display:none;">
+            <!-- KPI Cards Grid -->
+            <div class="kpi-grid">
+                <div class="kpi-card">
+                    <div class="kpi-icon blue">💰</div>
+                    <div class="kpi-details">
+                        <div class="kpi-label">Tổng Doanh Thu</div>
+                        <div id="kpi-revenue" class="kpi-value">0 đ</div>
+                    </div>
+                </div>
+
+                <div class="kpi-card">
+                    <div class="kpi-icon green">📦</div>
+                    <div class="kpi-details">
+                        <div class="kpi-label">Tổng Số Đơn Hàng</div>
+                        <div id="kpi-orders-count" class="kpi-value">0</div>
+                    </div>
+                </div>
+
+                <div class="kpi-card">
+                    <div class="kpi-icon purple">🛍️</div>
+                    <div class="kpi-details">
+                        <div class="kpi-label">Sản Phẩm Đã Bán</div>
+                        <div id="kpi-items-sold" class="kpi-value">0</div>
+                    </div>
+                </div>
+
+                <div class="kpi-card">
+                    <div class="kpi-icon orange">📊</div>
+                    <div class="kpi-details">
+                        <div class="kpi-label">Giá Trị Đơn Trung Bình</div>
+                        <div id="kpi-avg-order" class="kpi-value">0 đ</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Top Selling Products Section -->
+            <div class="admin-card">
+                <div class="admin-card-header">
+                    <h3>🏆 Top Sản Phẩm Bán Chạy Nhất</h3>
+                    <small style="color:#718096;">Thống kê tổng hợp từ hóa đơn hệ thống carts.xml và phiên đặt hàng</small>
+                </div>
+                <div id="top-products-container" class="top-products-grid"></div>
+            </div>
+
+            <!-- All Orders List Table -->
+            <div class="admin-card">
+                <div class="admin-card-header">
+                    <div style="display:flex;align-items:center;gap:12px;">
+                        <h3>📋 Danh Sách Toàn Bộ Đơn Hàng</h3>
+                        <span id="orders-table-count" style="background:#edf2f7;color:#4a5568;padding:2px 8px;border-radius:12px;font-size:12px;font-weight:700;">0 đơn hàng</span>
+                    </div>
+
+                    <div style="display:flex;align-items:center;gap:10px;">
+                        <label for="order-status-filter" style="font-size:13px;font-weight:700;color:#4a5568;">Lọc trạng thái:</label>
+                        <select id="order-status-filter" class="form-control" style="width:180px;" onchange="AdminDashboard.filterOrdersByStatus()">
+                            <option value="ALL">Tất cả trạng thái</option>
+                            <option value="Completed">Hoàn thành (Completed)</option>
+                            <option value="Processing">Đang xử lý (Processing)</option>
+                        </select>
+                        <button type="button" class="btn btn-secondary" style="font-size:12px;padding:8px 12px;" onclick="AdminDashboard.loadOrdersData()">
+                            🔄 Làm mới
+                        </button>
+                    </div>
+                </div>
+
+                <div style="overflow-x:auto;">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th style="width:50px;text-align:center;">#</th>
+                                <th style="width:140px;">Mã Đơn Hàng</th>
+                                <th>Khách Hàng</th>
+                                <th style="width:120px;">Ngày Đặt</th>
+                                <th style="width:130px;">Trạng Thái</th>
+                                <th style="width:150px;text-align:right;">Tổng Tiền</th>
+                                <th style="width:130px;">Thanh Toán</th>
+                            </tr>
+                        </thead>
+                        <tbody id="admin-orders-tbody"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mandatory Footer -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-student-info">
+                <div>Thí sinh: <strong>Đinh Thế Nhơn</strong> &bull; Mã sinh viên: <strong>K244060739</strong></div>
+                <div>Lớp: <strong>K24406</strong> &bull; Khoa Hệ thống Thông tin &bull; Trường Đại học Kinh tế - Luật (UEL)</div>
+            </div>
+            <div class="footer-course-info">
+                <div>Học phần: <strong>Phát triển Web Kinh doanh</strong></div>
+                <div>Giảng viên hướng dẫn: <strong>TS. Trần Duy Thanh</strong></div>
+                <div>Trang: <strong>Dashboard Quản Trị Hệ Thống (Q8)</strong></div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="data/carts_xml_str.js"></script>
+    <script src="js/parser.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/checkout.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>
+

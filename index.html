@@ -2,10 +2,363 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <title>Bài kiểm tra giữa kỳ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AHiHi Store - Phát triển Web Kinh doanh (Mã đề: BW08)</title>
+    <!-- Q3: Pure CSS (No Frameworks) -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-    <h1>Bài kiểm tra giữa kỳ</h1>
-    <p>Website đang được chuẩn bị.</p>
+
+    <!-- ========================================================
+         Q2: Semantic HTML5 Layout - HEADER & NAVIGATION
+         ======================================================== -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="index.html" class="brand-box">
+                <div class="brand-logo">🛍️</div>
+                <div class="brand-text">
+                    <h1>AHiHi Luxury Store</h1>
+                    <span class="subtext">Phát triển Web Kinh doanh &bull; Mã đề: BW08</span>
+                </div>
+            </a>
+
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html" class="active">Trang chủ</a></li>
+                    <li><a href="#products-section">Sản phẩm</a></li>
+                    <li><a href="admin.html">Trang Quản trị (Admin)</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <div id="header-user-chip" class="user-chip">
+                    <!-- Populated dynamically by auth.js -->
+                    <span>Chào, <strong>Khách vãng lai</strong></span>
+                </div>
+
+                <!-- Q6: Wrapper with position: relative so mini-cart uses position: absolute & z-index -->
+                <div class="header-cart-wrapper">
+                    <button type="button" class="btn-header-cart" onclick="CartManager.toggleMiniCart()">
+                        <span>🛒 Giỏ hàng</span>
+                        <span id="header-cart-badge" class="cart-badge">0</span>
+                    </button>
+
+                    <!-- Q6: BẢNG MINI-CART OVERLAY (position: absolute & z-index: 1000) -->
+                    <div id="mini-cart-overlay" class="mini-cart-overlay">
+                        <div class="mini-cart-header">
+                            <h3>🛒 Bảng Giỏ Hàng Mini</h3>
+                            <button type="button" class="btn-close-cart" onclick="CartManager.toggleMiniCart(false)">&times;</button>
+                        </div>
+                        <div id="mini-cart-body" class="mini-cart-body">
+                            <!-- Rendered as HTML <table> by cart.js -->
+                        </div>
+                        <div class="mini-cart-footer">
+                            <div class="mini-cart-total-row">
+                                <span>Tổng cộng:</span>
+                                <span id="mini-cart-total" class="mini-cart-total-amount">0 đ</span>
+                            </div>
+                            <button type="button" class="btn-checkout" onclick="CheckoutManager.openCheckoutModal()">
+                                💳 Tiến hành thanh toán
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ========================================================
+         Q2 & Q3: MAIN CONTENT WITH ASIDE AND PRODUCTS SECTION
+         ======================================================== -->
+    <main class="main-layout">
+        <!-- Q2: ASIDE - FORM TÌM KIẾM NÂNG CAO VỚI VALIDATION HTML5 (NO novalidate) -->
+        <aside class="search-sidebar">
+            <div class="sidebar-title">
+                <span>🔍 Tìm kiếm nâng cao</span>
+            </div>
+
+            <!-- Resolves Codex issue 1: Removed novalidate to enable native HTML5 validation -->
+            <form id="advanced-search-form">
+                <!-- 1. Keyword -->
+                <div class="form-group">
+                    <label for="search-keyword">Tên sản phẩm:</label>
+                    <input type="text" id="search-keyword" class="form-control" placeholder="Nhập tên sản phẩm...">
+                </div>
+
+                <!-- 2. Category Dropdown -->
+                <div class="form-group">
+                    <label for="search-category">Danh mục:</label>
+                    <select id="search-category" class="form-control">
+                        <option value="ALL">-- Tất cả danh mục --</option>
+                        <option value="men's clothing">Thời trang nam (Men)</option>
+                        <option value="women's clothing">Thời trang nữ (Women)</option>
+                        <option value="jewelery">Trang sức (Jewelery)</option>
+                        <option value="electronics">Đồ điện tử (Electronics)</option>
+                    </select>
+                </div>
+
+                <!-- 3. Price Range with HTML5 Validation -->
+                <div class="form-group">
+                    <label>Khoảng giá (VNĐ):</label>
+                    <div class="price-inputs">
+                        <input type="number" id="search-min-price" class="form-control" placeholder="Tối thiểu" min="0" max="100000000" step="50000">
+                        <span>-</span>
+                        <input type="number" id="search-max-price" class="form-control" placeholder="Tối đa" min="0" max="100000000" step="50000">
+                    </div>
+                </div>
+
+                <!-- 4. Colors Filter -->
+                <div class="form-group">
+                    <label>Màu sắc (Colors):</label>
+                    <div class="color-chips-group">
+                        <label class="color-chip-label" onclick="SearchManager.toggleColorChip(this)">
+                            <input type="checkbox" name="filter-color" value="Black">
+                            <span class="color-dot" style="background:#2d3748;"></span> Black
+                        </label>
+                        <label class="color-chip-label" onclick="SearchManager.toggleColorChip(this)">
+                            <input type="checkbox" name="filter-color" value="Blue">
+                            <span class="color-dot" style="background:#3182ce;"></span> Blue
+                        </label>
+                        <label class="color-chip-label" onclick="SearchManager.toggleColorChip(this)">
+                            <input type="checkbox" name="filter-color" value="Red">
+                            <span class="color-dot" style="background:#e53e3e;"></span> Red
+                        </label>
+                        <label class="color-chip-label" onclick="SearchManager.toggleColorChip(this)">
+                            <input type="checkbox" name="filter-color" value="Green">
+                            <span class="color-dot" style="background:#38a169;"></span> Green
+                        </label>
+                        <label class="color-chip-label" onclick="SearchManager.toggleColorChip(this)">
+                            <input type="checkbox" name="filter-color" value="Gold">
+                            <span class="color-dot" style="background:#d69e2e;"></span> Gold
+                        </label>
+                        <label class="color-chip-label" onclick="SearchManager.toggleColorChip(this)">
+                            <input type="checkbox" name="filter-color" value="Silver">
+                            <span class="color-dot" style="background:#a0aec0;"></span> Silver
+                        </label>
+                    </div>
+                </div>
+
+                <!-- 5. Rating Filter -->
+                <div class="form-group">
+                    <label for="search-rating">Đánh giá tối thiểu:</label>
+                    <select id="search-rating" class="form-control">
+                        <option value="0">-- Tất cả đánh giá --</option>
+                        <option value="4.5">★ 4.5 sao trở lên</option>
+                        <option value="4.0">★ 4.0 sao trở lên</option>
+                        <option value="3.0">★ 3.0 sao trở lên</option>
+                    </select>
+                </div>
+
+                <div class="filter-actions">
+                    <button type="submit" class="btn btn-primary">Áp dụng bộ lọc</button>
+                    <button type="button" class="btn btn-secondary" onclick="SearchManager.resetFilters()">Xóa lọc</button>
+                </div>
+            </form>
+        </aside>
+
+        <!-- SECTION: PRODUCTS LIST -->
+        <section class="products-section" id="products-section">
+            <div class="section-top-bar">
+                <div class="results-info">
+                    <h2>Danh sách sản phẩm cao cấp</h2>
+                    <div id="results-count-text" class="results-count">Đang nạp dữ liệu sản phẩm...</div>
+                    <div id="status-badge" style="font-size:12px;margin-top:4px;font-weight:600;"></div>
+                </div>
+
+                <div style="display:flex;align-items:center;gap:10px;">
+                    <label for="sort-by" style="font-size:13px;font-weight:700;color:#4a5568;">Sắp xếp:</label>
+                    <select id="sort-by" class="form-control" style="width:190px;">
+                        <option value="DEFAULT">Mặc định</option>
+                        <option value="PRICE_ASC">Giá: Thấp đến Cao</option>
+                        <option value="PRICE_DESC">Giá: Cao đến Thấp</option>
+                        <option value="RATING_DESC">Đánh giá sao cao nhất</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Q3: Skeleton Loading Animation (Hiển thị trước khi nạp xong dữ liệu) -->
+            <div id="skeleton-container" class="products-grid">
+                <div class="skeleton-card">
+                    <div class="skeleton-box skeleton-img"></div>
+                    <div class="skeleton-box skeleton-title"></div>
+                    <div class="skeleton-box skeleton-price"></div>
+                    <div class="skeleton-box skeleton-btn"></div>
+                </div>
+                <div class="skeleton-card">
+                    <div class="skeleton-box skeleton-img"></div>
+                    <div class="skeleton-box skeleton-title"></div>
+                    <div class="skeleton-box skeleton-price"></div>
+                    <div class="skeleton-box skeleton-btn"></div>
+                </div>
+                <div class="skeleton-card">
+                    <div class="skeleton-box skeleton-img"></div>
+                    <div class="skeleton-box skeleton-title"></div>
+                    <div class="skeleton-box skeleton-price"></div>
+                    <div class="skeleton-box skeleton-btn"></div>
+                </div>
+                <div class="skeleton-card">
+                    <div class="skeleton-box skeleton-img"></div>
+                    <div class="skeleton-box skeleton-title"></div>
+                    <div class="skeleton-box skeleton-price"></div>
+                    <div class="skeleton-box skeleton-btn"></div>
+                </div>
+            </div>
+
+            <!-- Q3 & Q4: Products CSS Grid Container (Nơi gắn Event Delegation duy nhất) -->
+            <div id="products-grid" class="products-grid" style="display:none;"></div>
+        </section>
+    </main>
+
+    <!-- ========================================================
+         MODALS: QUICK VIEW, RATING DETAIL, CHECKOUT, LOGIN
+         ======================================================== -->
+    <!-- 1. Quick View Modal (Q4) -->
+    <div id="quick-view-modal" class="modal-backdrop">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3>👁 Xem nhanh sản phẩm</h3>
+                <button type="button" class="btn-close-modal" onclick="App.closeModal('quick-view-modal')">&times;</button>
+            </div>
+            <div id="quick-view-body" class="modal-body"></div>
+        </div>
+    </div>
+
+    <!-- 2. Rating Detail Modal (Q5: Phân tích XML reviews.xml) -->
+    <div id="rating-detail-modal" class="modal-backdrop">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3 id="rating-detail-title">⭐ Chi tiết đánh giá sản phẩm</h3>
+                <button type="button" class="btn-close-modal" onclick="App.closeModal('rating-detail-modal')">&times;</button>
+            </div>
+            <div id="rating-detail-body" class="modal-body"></div>
+        </div>
+    </div>
+
+    <!-- 3. Checkout Modal (Q7: Form Validation nội tuyến bằng Regex) -->
+    <div id="checkout-modal" class="modal-backdrop">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3>💳 Thanh toán đơn hàng</h3>
+                <button type="button" class="btn-close-modal" onclick="CheckoutManager.closeCheckoutModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="checkout-form" onsubmit="CheckoutManager.processPayment(event)">
+                    <div class="form-group">
+                        <label for="checkout-name">Họ và tên người nhận (*):</label>
+                        <input type="text" id="checkout-name" class="form-control" placeholder="Ví dụ: Đinh Thế Nhơn" required>
+                        <div id="name-feedback" class="form-feedback"></div>
+                    </div>
+
+                    <!-- Q7: Regex Phone Validation -->
+                    <div class="form-group">
+                        <label for="checkout-phone">Số điện thoại Việt Nam (*):</label>
+                        <input type="tel" id="checkout-phone" class="form-control" placeholder="Ví dụ: 0985561713 hoặc +84985561713" required>
+                        <div id="phone-feedback" class="form-feedback"></div>
+                    </div>
+
+                    <!-- Q7: Regex Email Validation -->
+                    <div class="form-group">
+                        <label for="checkout-email">Địa chỉ Email (*):</label>
+                        <input type="email" id="checkout-email" class="form-control" placeholder="Ví dụ: nhondtk24406@st.uel.edu.vn" required>
+                        <div id="email-feedback" class="form-feedback"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="checkout-address">Địa chỉ nhận hàng (*):</label>
+                        <input type="text" id="checkout-address" class="form-control" placeholder="Số nhà, tên đường, phường/xã, quận/huyện..." required>
+                        <div id="address-feedback" class="form-feedback"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="checkout-payment-method">Phương thức thanh toán:</label>
+                        <select id="checkout-payment-method" class="form-control">
+                            <option value="COD">Thanh toán khi nhận hàng (COD)</option>
+                            <option value="Bank Transfer">Chuyển khoản ngân hàng (QR Code)</option>
+                            <option value="Momo">Ví điện tử MoMo / ZaloPay</option>
+                        </select>
+                    </div>
+
+                    <div style="background:#f7fafc;padding:14px;border-radius:8px;border:1px solid #e2e8f0;margin:18px 0;display:flex;justify-content:space-between;align-items:center;">
+                        <span style="font-weight:700;color:#4a5568;">Tổng tiền cần thanh toán:</span>
+                        <span id="checkout-total-display" style="font-size:20px;font-weight:800;color:#e53e3e;">0 đ</span>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width:100%;padding:14px;font-size:16px;">
+                        ✓ Xác nhận &amp; Đặt hàng ngay
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- 4. Login Modal -->
+    <div id="login-modal" class="modal-backdrop">
+        <div class="modal-card" style="max-width:480px;">
+            <div class="modal-header">
+                <h3>🔐 Đăng nhập tài khoản</h3>
+                <button type="button" class="btn-close-modal" onclick="App.closeModal('login-modal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="login-form" onsubmit="App.handleLoginSubmit(event)">
+                    <div class="form-group">
+                        <label for="login-email">Email đăng nhập:</label>
+                        <input type="email" id="login-email" class="form-control" placeholder="name@domain.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Mật khẩu:</label>
+                        <input type="password" id="login-password" class="form-control" placeholder="••••••••" required>
+                    </div>
+                    <div id="login-feedback-msg" class="form-feedback" style="margin-bottom:12px;"></div>
+                    <button type="submit" class="btn btn-primary" style="width:100%;padding:12px;">Đăng nhập</button>
+                </form>
+
+                <div style="margin-top:20px;padding-top:14px;border-top:1px solid #e2e8f0;">
+                    <small style="color:#718096;font-weight:bold;display:block;margin-bottom:8px;">TÀI KHOẢN MẪU THỬ NGHIỆM (Click để điền):</small>
+                    <div style="display:flex;flex-direction:column;gap:6px;">
+                        <span style="cursor:pointer;background:#ebf8ff;color:#2b6cb0;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:600;" onclick="App.fillDemoAccount('admin@bw08.com', '123')">
+                            👔 Admin: admin@bw08.com / 123
+                        </span>
+                        <span style="cursor:pointer;background:#f0fff4;color:#276749;padding:4px 8px;border-radius:4px;font-size:12px;font-weight:600;" onclick="App.fillDemoAccount('nhondtk24406@st.uel.edu.vn', '123')">
+                            👤 Khách hàng (Đinh Thế Nhơn): nhondtk24406@st.uel.edu.vn / 123
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================================
+         FOOTER: BẮT BUỘC THEO QUY ĐỊNH ĐỀ THI
+         Họ và Tên Sinh viên + Mã Sinh viên
+         ======================================================== -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-student-info">
+                <div>Thí sinh: <strong>Đinh Thế Nhơn</strong> &bull; Mã sinh viên: <strong>K244060739</strong></div>
+                <div>Lớp: <strong>K24406</strong> &bull; Khoa Hệ thống Thông tin &bull; Trường Đại học Kinh tế - Luật (UEL)</div>
+            </div>
+            <div class="footer-course-info">
+                <div>Học phần: <strong>Phát triển Web Kinh doanh</strong></div>
+                <div>Giảng viên hướng dẫn: <strong>TS. Trần Duy Thanh</strong></div>
+                <div>Mã đề thi: <span style="background:#e53e3e;color:#fff;padding:2px 6px;border-radius:4px;font-weight:bold;">BW08</span></div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 AHiHi Luxury Store &bull; Phát triển Web Kinh doanh &bull; Trường Đại học Kinh tế - Luật (UEL)
+        </div>
+    </footer>
+
+    <!-- Offline Preloaded String Fallbacks (100% không bao giờ lỗi kể cả khi mở file://) -->
+    <script src="data/products_xml_str.js"></script>
+    <script src="data/reviews_xml_str.js"></script>
+    <script src="data/carts_xml_str.js"></script>
+
+    <!-- Core Application Modules -->
+    <script src="js/parser.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/checkout.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/app.js"></script>
 </body>
 </html>

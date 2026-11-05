@@ -1,0 +1,29 @@
+{
+  "EMP001": {
+    "id": "EMP001",
+    "fullName": "Trần Thành Công",
+    "email": "admin@bw08.com",
+    "password": "123",
+    "role": "Admin",
+    "department": "Ban Giám Đốc",
+    "phone": "0901234567"
+  },
+  "EMP002": {
+    "id": "EMP002",
+    "fullName": "Nguyễn Thị Mai Lan",
+    "email": "manager@bw08.com",
+    "password": "123",
+    "role": "Sales Manager",
+    "department": "Phòng Kinh Doanh",
+    "phone": "0912345678"
+  },
+  "EMP003": {
+    "id": "EMP003",
+    "fullName": "Lê Văn Hùng",
+    "email": "staff@bw08.com",
+    "password": "123",
+    "role": "Sales Staff",
+    "department": "Chăm sóc khách hàng",
+    "phone": "0987654321"
+  }
+}

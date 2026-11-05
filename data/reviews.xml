@@ -1,0 +1,395 @@
+<?xml version="1.0" ?>
+<reviews>
+  <review id="REV-0001">
+    <product_id>1</product_id>
+    <customer_name>Đinh Thế Nhơn</customer_name>
+    <rating>5</rating>
+    <comment>Sản phẩm chất lượng cực kỳ tốt, đúng như mô tả, giao hàng nhanh!</comment>
+    <date>2026-10-28</date>
+  </review>
+  <review id="REV-0002">
+    <product_id>1</product_id>
+    <customer_name>Vũ Thanh Thảo</customer_name>
+    <rating>5</rating>
+    <comment>Đẹp xuất sắc, màu đúng chuẩn như ảnh mẫu!</comment>
+    <date>2026-11-04</date>
+  </review>
+  <review id="REV-0003">
+    <product_id>1</product_id>
+    <customer_name>Trần Quốc Bảo</customer_name>
+    <rating>5</rating>
+    <comment>Hàng chính hãng, dùng rất mượt mà và bền bỉ. Sẽ tiếp tục ủng hộ.</comment>
+    <date>2026-10-30</date>
+  </review>
+  <review id="REV-0004">
+    <product_id>1</product_id>
+    <customer_name>Phạm Hoàng Yến</customer_name>
+    <rating>4</rating>
+    <comment>Chất liệu đẹp, đóng gói cẩn thận. Rất ưng ý!</comment>
+    <date>2026-10-29</date>
+  </review>
+  <review id="REV-0005">
+    <product_id>2</product_id>
+    <customer_name>Phạm Hoàng Yến</customer_name>
+    <rating>4</rating>
+    <comment>Chất liệu đẹp, đóng gói cẩn thận. Rất ưng ý!</comment>
+    <date>2026-10-29</date>
+  </review>
+  <review id="REV-0006">
+    <product_id>2</product_id>
+    <customer_name>Hoàng Minh Tuấn</customer_name>
+    <rating>3</rating>
+    <comment>Tạm ổn trong tầm giá, thời gian giao hàng hơi lâu một chút.</comment>
+    <date>2026-11-03</date>
+  </review>
+  <review id="REV-0007">
+    <product_id>3</product_id>
+    <customer_name>Hoàng Minh Tuấn</customer_name>
+    <rating>3</rating>
+    <comment>Tạm ổn trong tầm giá, thời gian giao hàng hơi lâu một chút.</comment>
+    <date>2026-11-03</date>
+  </review>
+  <review id="REV-0008">
+    <product_id>3</product_id>
+    <customer_name>Vũ Thanh Thảo</customer_name>
+    <rating>5</rating>
+    <comment>Đẹp xuất sắc, màu đúng chuẩn như ảnh mẫu!</comment>
+    <date>2026-11-04</date>
+  </review>
+  <review id="REV-0009">
+    <product_id>4</product_id>
+    <customer_name>Đinh Thế Nhơn</customer_name>
+    <rating>5</rating>
+    <comment>Sản phẩm chất lượng cực kỳ tốt, đúng như mô tả, giao hàng nhanh!</comment>
+    <date>2026-10-28</date>
+  </review>
+  <review id="REV-0010">
+    <product_id>4</product_id>
+    <customer_name>Nguyễn Văn An</customer_name>
+    <rating>5</rating>
+    <comment>Tuyệt vời, vượt xa mong đợi. Cho shop 5 sao chất lượng!</comment>
+    <date>2026-11-02</date>
+  </review>
+  <review id="REV-0011">
+    <product_id>4</product_id>
+    <customer_name>Lê Thị Bích</customer_name>
+    <rating>4</rating>
+    <comment>Màu sắc sắc nét, giá cả hợp lý so với chất lượng.</comment>
+    <date>2026-11-01</date>
+  </review>
+  <review id="REV-0012">
+    <product_id>4</product_id>
+    <customer_name>Vũ Thanh Thảo</customer_name>
+    <rating>5</rating>
+    <comment>Đẹp xuất sắc, màu đúng chuẩn như ảnh mẫu!</comment>
+    <date>2026-11-04</date>
+  </review>
+  <review id="REV-0013">
+    <product_id>5</product_id>
+    <customer_name>Đinh Thế Nhơn</customer_name>
+    <rating>5</rating>
+    <comment>Sản phẩm chất lượng cực kỳ tốt, đúng như mô tả, giao hàng nhanh!</comment>
+    <date>2026-10-28</date>
+  </review>
+  <review id="REV-0014">
+    <product_id>5</product_id>
+    <customer_name>Phạm Hoàng Yến</customer_name>
+    <rating>4</rating>
+    <comment>Chất liệu đẹp, đóng gói cẩn thận. Rất ưng ý!</comment>
+    <date>2026-10-29</date>
+  </review>
+  <review id="REV-0015">
+    <product_id>6</product_id>
+    <customer_name>Nguyễn Văn An</customer_name>
+    <rating>5</rating>
+    <comment>Tuyệt vời, vượt xa mong đợi. Cho shop 5 sao chất lượng!</comment>
+    <date>2026-11-02</date>
+  </review>
+  <review id="REV-0016">
+    <product_id>6</product_id>
+    <customer_name>Vũ Thanh Thảo</customer_name>
+    <rating>5</rating>
+    <comment>Đẹp xuất sắc, màu đúng chuẩn như ảnh mẫu!</comment>
+    <date>2026-11-04</date>
+  </review>
+  <review id="REV-0017">
+    <product_id>7</product_id>
+    <customer_name>Nguyễn Văn An</customer_name>
+    <rating>5</rating>
+    <comment>Tuyệt vời, vượt xa mong đợi. Cho shop 5 sao chất lượng!</comment>
+    <date>2026-11-02</date>
+  </review>
+  <review id="REV-0018">
+    <product_id>7</product_id>
+    <customer_name>Phạm Hoàng Yến</customer_name>
+    <rating>4</rating>
+    <comment>Chất liệu đẹp, đóng gói cẩn thận. Rất ưng ý!</comment>
+    <date>2026-10-29</date>
+  </review>
+  <review id="REV-0019">
+    <product_id>8</product_id>
+    <customer_name>Hoàng Minh Tuấn</customer_name>
+    <rating>3</rating>
+    <comment>Tạm ổn trong tầm giá, thời gian giao hàng hơi lâu một chút.</comment>
+    <date>2026-11-03</date>
+  </review>
+  <review id="REV-0020">
+    <product_id>8</product_id>
+    <customer_name>Vũ Thanh Thảo</customer_name>
+    <rating>5</rating>
+    <comment>Đẹp xuất sắc, màu đúng chuẩn như ảnh mẫu!</comment>
+    <date>2026-11-04</date>
+  </review>
+  <review id="REV-0021">
+    <product_id>8</product_id>
+    <customer_name>Nguyễn Văn An</customer_name>
+    <rating>5</rating>
+    <comment>Tuyệt vời, vượt xa mong đợi. Cho shop 5 sao chất lượng!</comment>
+    <date>2026-11-02</date>
+  </review>
+  <review id="REV-0022">
+    <product_id>8</product_id>
+    <customer_name>Lê Thị Bích</customer_name>
+    <rating>4</rating>
+    <comment>Màu sắc sắc nét, giá cả hợp lý so với chất lượng.</comment>
+    <date>2026-11-01</date>
+  </review>
+  <review id="REV-0023">
+    <product_id>9</product_id>
+    <customer_name>Lê Thị Bích</customer_name>
+    <rating>4</rating>
+    <comment>Màu sắc sắc nét, giá cả hợp lý so với chất lượng.</comment>
+    <date>2026-11-01</date>
+  </review>
+  <review id="REV-0024">
+    <product_id>9</product_id>
+    <customer_name>Nguyễn Văn An</customer_name>
+    <rating>5</rating>
+    <comment>Tuyệt vời, vượt xa mong đợi. Cho shop 5 sao chất lượng!</comment>
+    <date>2026-11-02</date>
+  </review>
+  <review id="REV-0025">
+    <product_id>10</product_id>
+    <customer_name>Vũ Thanh Thảo</customer_name>
+    <rating>5</rating>
+    <comment>Đẹp xuất sắc, màu đúng chuẩn như ảnh mẫu!</comment>
+    <date>2026-11-04</date>
+  </review>
+  <review id="REV-0026">
+    <product_id>10</product_id>
+    <customer_name>Đinh Thế Nhơn</customer_name>
+    <rating>5</rating>
+    <comment>Sản phẩm chất lượng cực kỳ tốt, đúng như mô tả, giao hàng nhanh!</comment>
+    <date>2026-10-28</date>
+  </review>
+  <review id="REV-0027">
+    <product_id>10</product_id>
+    <customer_name>Phạm Hoàng Yến</customer_name>
+    <rating>4</rating>
+    <comment>Chất liệu đẹp, đóng gói cẩn thận. Rất ưng ý!</comment>
+    <date>2026-10-29</date>
+  </review>
+  <review id="REV-0028">
+    <product_id>11</product_id>
+    <customer_name>Lê Thị Bích</customer_name>
+    <rating>4</rating>
+    <comment>Màu sắc sắc nét, giá cả hợp lý so với chất lượng.</comment>
+    <date>2026-11-01</date>
+  </review>
+  <review id="REV-0029">
+    <product_id>11</product_id>
+    <customer_name>Trần Quốc Bảo</customer_name>
+    <rating>5</rating>
+    <comment>Hàng chính hãng, dùng rất mượt mà và bền bỉ. Sẽ tiếp tục ủng hộ.</comment>
+    <date>2026-10-30</date>
+  </review>
+  <review id="REV-0030">
+    <product_id>11</product_id>
+    <customer_name>Hoàng Minh Tuấn</customer_name>
+    <rating>3</rating>
+    <comment>Tạm ổn trong tầm giá, thời gian giao hàng hơi lâu một chút.</comment>
+    <date>2026-11-03</date>
+  </review>
+  <review id="REV-0031">
+    <product_id>11</product_id>
+    <customer_name>Phạm Hoàng Yến</customer_name>
+    <rating>4</rating>
+    <comment>Chất liệu đẹp, đóng gói cẩn thận. Rất ưng ý!</comment>
+    <date>2026-10-29</date>
+  </review>
+  <review id="REV-0032">
+    <product_id>12</product_id>
+    <customer_name>Vũ Thanh Thảo</customer_name>
+    <rating>5</rating>
+    <comment>Đẹp xuất sắc, màu đúng chuẩn như ảnh mẫu!</comment>
+    <date>2026-11-04</date>
+  </review>
+  <review id="REV-0033">
+    <product_id>12</product_id>
+    <customer_name>Trần Quốc Bảo</customer_name>
+    <rating>5</rating>
+    <comment>Hàng chính hãng, dùng rất mượt mà và bền bỉ. Sẽ tiếp tục ủng hộ.</comment>
+    <date>2026-10-30</date>
+  </review>
+  <review id="REV-0034">
+    <product_id>13</product_id>
+    <customer_name>Đinh Thế Nhơn</customer_name>
+    <rating>5</rating>
+    <comment>Sản phẩm chất lượng cực kỳ tốt, đúng như mô tả, giao hàng nhanh!</comment>
+    <date>2026-10-28</date>
+  </review>
+  <review id="REV-0035">
+    <product_id>13</product_id>
+    <customer_name>Lê Thị Bích</customer_name>
+    <rating>4</rating>
+    <comment>Màu sắc sắc nét, giá cả hợp lý so với chất lượng.</comment>
+    <date>2026-11-01</date>
+  </review>
+  <review id="REV-0036">
+    <product_id>14</product_id>
+    <customer_name>Trần Quốc Bảo</customer_name>
+    <rating>5</rating>
+    <comment>Hàng chính hãng, dùng rất mượt mà và bền bỉ. Sẽ tiếp tục ủng hộ.</comment>
+    <date>2026-10-30</date>
+  </review>
+  <review id="REV-0037">
+    <product_id>14</product_id>
+    <customer_name>Vũ Thanh Thảo</customer_name>
+    <rating>5</rating>
+    <comment>Đẹp xuất sắc, màu đúng chuẩn như ảnh mẫu!</comment>
+    <date>2026-11-04</date>
+  </review>
+  <review id="REV-0038">
+    <product_id>15</product_id>
+    <customer_name>Trần Quốc Bảo</customer_name>
+    <rating>5</rating>
+    <comment>Hàng chính hãng, dùng rất mượt mà và bền bỉ. Sẽ tiếp tục ủng hộ.</comment>
+    <date>2026-10-30</date>
+  </review>
+  <review id="REV-0039">
+    <product_id>15</product_id>
+    <customer_name>Đinh Thế Nhơn</customer_name>
+    <rating>5</rating>
+    <comment>Sản phẩm chất lượng cực kỳ tốt, đúng như mô tả, giao hàng nhanh!</comment>
+    <date>2026-10-28</date>
+  </review>
+  <review id="REV-0040">
+    <product_id>15</product_id>
+    <customer_name>Lê Thị Bích</customer_name>
+    <rating>4</rating>
+    <comment>Màu sắc sắc nét, giá cả hợp lý so với chất lượng.</comment>
+    <date>2026-11-01</date>
+  </review>
+  <review id="REV-0041">
+    <product_id>15</product_id>
+    <customer_name>Hoàng Minh Tuấn</customer_name>
+    <rating>3</rating>
+    <comment>Tạm ổn trong tầm giá, thời gian giao hàng hơi lâu một chút.</comment>
+    <date>2026-11-03</date>
+  </review>
+  <review id="REV-0042">
+    <product_id>16</product_id>
+    <customer_name>Đinh Thế Nhơn</customer_name>
+    <rating>5</rating>
+    <comment>Sản phẩm chất lượng cực kỳ tốt, đúng như mô tả, giao hàng nhanh!</comment>
+    <date>2026-10-28</date>
+  </review>
+  <review id="REV-0043">
+    <product_id>16</product_id>
+    <customer_name>Nguyễn Văn An</customer_name>
+    <rating>5</rating>
+    <comment>Tuyệt vời, vượt xa mong đợi. Cho shop 5 sao chất lượng!</comment>
+    <date>2026-11-02</date>
+  </review>
+  <review id="REV-0044">
+    <product_id>16</product_id>
+    <customer_name>Trần Quốc Bảo</customer_name>
+    <rating>5</rating>
+    <comment>Hàng chính hãng, dùng rất mượt mà và bền bỉ. Sẽ tiếp tục ủng hộ.</comment>
+    <date>2026-10-30</date>
+  </review>
+  <review id="REV-0045">
+    <product_id>17</product_id>
+    <customer_name>Nguyễn Văn An</customer_name>
+    <rating>5</rating>
+    <comment>Tuyệt vời, vượt xa mong đợi. Cho shop 5 sao chất lượng!</comment>
+    <date>2026-11-02</date>
+  </review>
+  <review id="REV-0046">
+    <product_id>17</product_id>
+    <customer_name>Trần Quốc Bảo</customer_name>
+    <rating>5</rating>
+    <comment>Hàng chính hãng, dùng rất mượt mà và bền bỉ. Sẽ tiếp tục ủng hộ.</comment>
+    <date>2026-10-30</date>
+  </review>
+  <review id="REV-0047">
+    <product_id>17</product_id>
+    <customer_name>Vũ Thanh Thảo</customer_name>
+    <rating>5</rating>
+    <comment>Đẹp xuất sắc, màu đúng chuẩn như ảnh mẫu!</comment>
+    <date>2026-11-04</date>
+  </review>
+  <review id="REV-0048">
+    <product_id>17</product_id>
+    <customer_name>Phạm Hoàng Yến</customer_name>
+    <rating>4</rating>
+    <comment>Chất liệu đẹp, đóng gói cẩn thận. Rất ưng ý!</comment>
+    <date>2026-10-29</date>
+  </review>
+  <review id="REV-0049">
+    <product_id>18</product_id>
+    <customer_name>Đinh Thế Nhơn</customer_name>
+    <rating>5</rating>
+    <comment>Sản phẩm chất lượng cực kỳ tốt, đúng như mô tả, giao hàng nhanh!</comment>
+    <date>2026-10-28</date>
+  </review>
+  <review id="REV-0050">
+    <product_id>18</product_id>
+    <customer_name>Vũ Thanh Thảo</customer_name>
+    <rating>5</rating>
+    <comment>Đẹp xuất sắc, màu đúng chuẩn như ảnh mẫu!</comment>
+    <date>2026-11-04</date>
+  </review>
+  <review id="REV-0051">
+    <product_id>18</product_id>
+    <customer_name>Phạm Hoàng Yến</customer_name>
+    <rating>4</rating>
+    <comment>Chất liệu đẹp, đóng gói cẩn thận. Rất ưng ý!</comment>
+    <date>2026-10-29</date>
+  </review>
+  <review id="REV-0052">
+    <product_id>18</product_id>
+    <customer_name>Trần Quốc Bảo</customer_name>
+    <rating>5</rating>
+    <comment>Hàng chính hãng, dùng rất mượt mà và bền bỉ. Sẽ tiếp tục ủng hộ.</comment>
+    <date>2026-10-30</date>
+  </review>
+  <review id="REV-0053">
+    <product_id>19</product_id>
+    <customer_name>Vũ Thanh Thảo</customer_name>
+    <rating>5</rating>
+    <comment>Đẹp xuất sắc, màu đúng chuẩn như ảnh mẫu!</comment>
+    <date>2026-11-04</date>
+  </review>
+  <review id="REV-0054">
+    <product_id>19</product_id>
+    <customer_name>Phạm Hoàng Yến</customer_name>
+    <rating>4</rating>
+    <comment>Chất liệu đẹp, đóng gói cẩn thận. Rất ưng ý!</comment>
+    <date>2026-10-29</date>
+  </review>
+  <review id="REV-0055">
+    <product_id>20</product_id>
+    <customer_name>Lê Thị Bích</customer_name>
+    <rating>4</rating>
+    <comment>Màu sắc sắc nét, giá cả hợp lý so với chất lượng.</comment>
+    <date>2026-11-01</date>
+  </review>
+  <review id="REV-0056">
+    <product_id>20</product_id>
+    <customer_name>Trần Quốc Bảo</customer_name>
+    <rating>5</rating>
+    <comment>Hàng chính hãng, dùng rất mượt mà và bền bỉ. Sẽ tiếp tục ủng hộ.</comment>
+    <date>2026-10-30</date>
+  </review>
+</reviews>

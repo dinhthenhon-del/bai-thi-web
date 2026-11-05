@@ -1,0 +1,29 @@
+{
+  "CUST001": {
+    "id": "CUST001",
+    "fullName": "Đinh Thế Nhơn",
+    "email": "nhondtk24406@st.uel.edu.vn",
+    "password": "123",
+    "phone": "0985561713",
+    "address": "669 QL1A, Khu phố 3, Linh Xuân, Thủ Đức, TP.HCM",
+    "city": "TP. Hồ Chí Minh"
+  },
+  "CUST002": {
+    "id": "CUST002",
+    "fullName": "Phạm Hoàng Yến",
+    "email": "yen.pham@gmail.com",
+    "password": "123",
+    "phone": "0934567890",
+    "address": "123 Nguyễn Thị Minh Khai, Quận 1, TP.HCM",
+    "city": "TP. Hồ Chí Minh"
+  },
+  "CUST003": {
+    "id": "CUST003",
+    "fullName": "Trần Quốc Bảo",
+    "email": "baotq@yahoo.com",
+    "password": "123",
+    "phone": "0978123456",
+    "address": "45 Lê Lợi, Quận Hải Châu, Đà Nẵng",
+    "city": "Đà Nẵng"
+  }
+}

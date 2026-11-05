@@ -1,0 +1,80 @@
+<?xml version="1.0" ?>
+<orders>
+  <order id="ORD-2026-1001">
+    <order_date>2026-11-01T09:30:00</order_date>
+    <employee id="EMP002">Nguyễn Thị Mai Lan</employee>
+    <customer id="CUST001">
+      <name>Đinh Thế Nhơn</name>
+      <phone>0985561713</phone>
+      <address>669 QL1A, Linh Xuân, Thủ Đức</address>
+    </customer>
+    <payment_method>COD</payment_method>
+    <status>Completed</status>
+    <total_amount>3865000</total_amount>
+    <items>
+      <item product_id="1">
+        <product_name>Fjallraven - Foldsack No. 1 Backpack</product_name>
+        <color>Blue</color>
+        <quantity>1</quantity>
+        <price>2749000</price>
+        <subtotal>2749000</subtotal>
+      </item>
+      <item product_id="2">
+        <product_name>Mens Casual Premium Slim Fit T-Shirts</product_name>
+        <color>Black</color>
+        <quantity>2</quantity>
+        <price>558000</price>
+        <subtotal>1116000</subtotal>
+      </item>
+    </items>
+  </order>
+  <order id="ORD-2026-1002">
+    <order_date>2026-11-03T14:15:00</order_date>
+    <employee id="EMP003">Lê Văn Hùng</employee>
+    <customer id="CUST002">
+      <name>Phạm Hoàng Yến</name>
+      <phone>0934567890</phone>
+      <address>123 Nguyễn Thị Minh Khai, Q1</address>
+    </customer>
+    <payment_method>Bank Transfer</payment_method>
+    <status>Completed</status>
+    <total_amount>17375000</total_amount>
+    <items>
+      <item product_id="5">
+        <product_name>John Hardy Women's Legends Naga Gold &amp; Silver Bracelet</product_name>
+        <color>Gold</color>
+        <quantity>1</quantity>
+        <price>17375000</price>
+        <subtotal>17375000</subtotal>
+      </item>
+    </items>
+  </order>
+  <order id="ORD-2026-1003">
+    <order_date>2026-11-04T16:45:00</order_date>
+    <employee id="EMP002">Nguyễn Thị Mai Lan</employee>
+    <customer id="CUST003">
+      <name>Trần Quốc Bảo</name>
+      <phone>0978123456</phone>
+      <address>45 Lê Lợi, Đà Nẵng</address>
+    </customer>
+    <payment_method>COD</payment_method>
+    <status>Processing</status>
+    <total_amount>5925000</total_amount>
+    <items>
+      <item product_id="9">
+        <product_name>WD 2TB Elements Portable External Hard Drive</product_name>
+        <color>Black</color>
+        <quantity>2</quantity>
+        <price>1600000</price>
+        <subtotal>3200000</subtotal>
+      </item>
+      <item product_id="11">
+        <product_name>Silicon Power 256GB SSD 3D NAND</product_name>
+        <color>Silver</color>
+        <quantity>1</quantity>
+        <price>2725000</price>
+        <subtotal>2725000</subtotal>
+      </item>
+    </items>
+  </order>
+</orders>
